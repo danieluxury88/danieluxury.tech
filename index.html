@@ -49,23 +49,27 @@
 
     <script>
         function fetchData() {
-          $.ajax({
-            url: 'now_playing.txt',  // Replace with the actual path to your text file
-            success: function(data) {
-              var lines = data.split('\n');
-              $('#song-name').text(lines[0]);
-              $('#tab-url').text(lines[1]);
-            },
-            error: function() {
-              $('#song-name').text('Failed to load song');
-              $('#tab-url').text('Failed to load URL');
-            }
-          });
-        }
+            $.ajax({
+              url: 'now_playing.txt',
+              success: function(data) {
+                console.log("Raw data:", data);  // Debug: Log raw data
+                var lines = data.trim().split('\n');
+                console.log("Parsed lines:", lines);  // Debug: Log parsed lines
+                $('#song-name').text(lines[0]);
+                $('#tab-url').text(lines[1]);
+              },
+              error: function() {
+                $('#song-name').text('Failed to load song');
+                $('#tab-url').text('Failed to load URL');
+              }
+            });
+          }
     
         // Fetch the data every 10 seconds
         setInterval(fetchData, 10000);
         fetchData();  // Fetch immediately on page load
+
+          
       </script>
     
 </body>
