@@ -41,7 +41,7 @@
     <p>mail: daniel.proano.88@gmail</p>
     <p>phone: +593 996004015</p>
     <footer>
-        Quito - Ecuador
+        Quito - Ecuador<br>
         Currently Listening: <span id="now-playing">Loading...</span>
         <a><span id="tab-url">Loading...</span></a>
     </footer>
@@ -50,7 +50,7 @@
     <script>
         function fetchData() {
           $.ajax({
-            url: 'song_and_url.txt',  // Replace with the actual path to your text file
+            url: 'now_playing.txt',  // Replace with the actual path to your text file
             success: function(data) {
               var lines = data.split('\n');
               $('#song-name').text(lines[0]);
