@@ -43,7 +43,7 @@
     <footer>
         Quito - Ecuador<br>
         Currently Listening: <span id="now-playing">Loading...</span>
-        <a><span id="tab-url">Loading...</span></a>
+        <span id="tab-url">Loading...</span>
     </footer>
 
 
@@ -55,11 +55,11 @@
                 console.log("Raw data:", data);  // Debug: Log raw data
                 var lines = data.trim().split('\n');
                 console.log("Parsed lines:", lines);  // Debug: Log parsed lines
-                $('#song-name').text(lines[0]);
+                $('#now-playing').text(lines[0]);
                 $('#tab-url').text(lines[1]);
               },
               error: function() {
-                $('#song-name').text('Failed to load song');
+                $('#now-playing').text('Failed to load song');
                 $('#tab-url').text('Failed to load URL');
               }
             });
