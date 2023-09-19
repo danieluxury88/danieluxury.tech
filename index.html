@@ -41,6 +41,24 @@
     <p>phone: +593 996004015</p>
     <footer>
         Quito - Ecuador
+        Currently Playing: <span id="now-playing">Loading...</span>
     </footer>
+
+
+    <script>
+      function fetchSong() {
+        $.ajax({
+          url: 'now_playing.txt',
+          success: function(data) {
+            $('#now-playing').text(data);
+          }
+        });
+      }
+  
+      // Fetch the song every 10 seconds
+      setInterval(fetchSong, 10000);
+      fetchSong();
+    </script>
+
 </body>
 </html>
