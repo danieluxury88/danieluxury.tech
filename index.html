@@ -42,24 +42,31 @@
     <p>phone: +593 996004015</p>
     <footer>
         Quito - Ecuador
-        Currently Playing: <span id="now-playing">Loading...</span>
+        Currently Listening: <span id="now-playing">Loading...</span>
+        <a><span id="tab-url">Loading...</span></a>
     </footer>
 
 
     <script>
-      function fetchSong() {
-        $.ajax({
-          url: 'now_playing.txt',
-          success: function(data) {
-            $('#now-playing').text(data);
-          }
-        });
-      }
-  
-      // Fetch the song every 10 seconds
-      setInterval(fetchSong, 10000);
-      fetchSong();
-    </script>
-
+        function fetchData() {
+          $.ajax({
+            url: 'song_and_url.txt',  // Replace with the actual path to your text file
+            success: function(data) {
+              var lines = data.split('\n');
+              $('#song-name').text(lines[0]);
+              $('#tab-url').text(lines[1]);
+            },
+            error: function() {
+              $('#song-name').text('Failed to load song');
+              $('#tab-url').text('Failed to load URL');
+            }
+          });
+        }
+    
+        // Fetch the data every 10 seconds
+        setInterval(fetchData, 10000);
+        fetchData();  // Fetch immediately on page load
+      </script>
+    
 </body>
 </html>
