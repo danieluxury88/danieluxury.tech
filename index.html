@@ -42,8 +42,8 @@
     <p>phone: +593 996004015</p>
     <footer>
         Quito - Ecuador<br>
-        Currently Listening: <span id="now-playing">Loading...</span>
-        <span id="tab-url">Loading...</span>
+        Currently Listening: <span id="now-playing">Loading...</span><br>
+        <a href="#" id="tab-url">Loading...</a>
     </footer>
 
 
@@ -56,11 +56,11 @@
                 var lines = data.trim().split('\n');
                 console.log("Parsed lines:", lines);  // Debug: Log parsed lines
                 $('#now-playing').text(lines[0]);
-                $('#tab-url').text(lines[1]);
+                $('#tab-url').text(lines[1]).attr('href', lines[1]);
               },
               error: function() {
                 $('#now-playing').text('Failed to load song');
-                $('#tab-url').text('Failed to load URL');
+                $('#tab-url').text('Failed to load URL').attr('href', '#');
               }
             });
           }
