@@ -52,9 +52,9 @@
             $.ajax({
               url: 'now_playing.txt',
               success: function(data) {
-                console.log("Raw data:", data);  // Debug: Log raw data
+                console.log("Raw data:", data);
                 var lines = data.trim().split('\n');
-                console.log("Parsed lines:", lines);  // Debug: Log parsed lines
+                console.log("Parsed lines:", lines);
                 $('#now-playing').text(lines[0]);
                 $('#tab-url').text(lines[1]).attr('href', lines[1]);
               },
