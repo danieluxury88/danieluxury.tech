@@ -18,9 +18,24 @@ body {
   font-weight: 300;
   line-height: 1.6; }
 
-  .container {
+.container {
     margin: 3rem;
-  }
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #6D5D4B;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 3rem 3rem;
+    border-top: #6D5D4B 1px solid;
+}
 
 .image--meme {
     width: 300px;
