@@ -18,6 +18,10 @@ body {
   font-weight: 300;
   line-height: 1.6; }
 
+  .container {
+    margin: 3rem;
+  }
+
 .image--meme {
     width: 300px;
     height: 300px;
