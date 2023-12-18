@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Sign-up Form</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+
+        </div>
+        <div class="right-section__header">
+            <p>
+                This is not a real online service! You know you nedd something like this in your lige to help you realize your deepest dreams.
+                Sign up <em>now</em> to get started.
+                <br><br>
+                You <em>know</em> you want to.
+            </p>
+        </div>
+
+        <form action="#" method="post" style="width: 100%; height: 100%">
+            <div class="right-section__form">
+            <h2>Let's do this</h2>
+                <div class="form__input">
+                    <label for="first-name">First name</label>
+                    <input type="text" name="firstname" id="name">
+                </div>
+                <div class="form__input">
+                    <label for="last-name">Last name</label>
+                    <input type="text" name="last-name" id="name">
+                </div>
+                <div class="form__input">
+                    <label for="mail">Email</label>
+                    <input type="text" name="mail" id="mail">
+                </div>
+                <div class="form__input">
+                    <label for="phone-number">Phone number</label>
+                    <input type="text" name="phone-number" id="phone-number">
+                </div>
+                <div class="form__input">
+                    <label for="password">Password</label>
+                    <input type="text" name="password" id="password">
+                </div>
+                <div class="form__input">
+                    <label for="conf-password">Confirm password</label>
+                    <input type="text" name="conf-password" id="conf-password">
+                </div>
+            </div>
+        </form>
+
+        <div class="right-section__footer">
+            <button>Create account</button>
+            <p>Already have an account? <a href="#"> Log in</a></p>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+    <style>
+        :root {
+            --color-primary: rgb(88,109, 71);
+            --color-bg: rgb(14,14, 14);
+            --color-bg-form: rgb(248,250, 251);
+        }
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        html{
+            box-sizing: content-box;
+            font-size: 62.5%;
+        }
+
+        body{
+            font-family: 'Crimson Pro', serif;
+            background-color: var(--color-bg);
+        }
+        .container {
+            height: 80vh;
+            width: 80vw;
+            margin: 10vh auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: repeat(3, 1fr);
+
+        }
+
+        .left-section {
+            background: url('neom-lh1uDwaUPPM-unsplash.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            resize: both;
+            grid-row: 1 / -1;
+            grid-column: 1/2;
+
+        }
+
+        .right-section__header {
+            font-size: 2.5rem;
+            padding: 3rem 1rem;
+            background-color: var(--color-bg-form);
+        }
+
+        .right-section__form {
+            background-color: white;
+            display: flex;
+            height: 100%;
+            flex-flow: row wrap;
+            gap: 1rem;
+            padding: 2rem 2rem;
+            justify-content: center;
+            align-content: center;
+
+        }
+
+        .right-section__form h2 {
+            width: 100%;
+        }
+
+        .form__input {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            text-transform: uppercase;
+        }
+
+        .right-section__footer {
+            background-color: var(--color-bg-form);
+            font-size: 3rem;
+            padding-top: 5rem;
+            padding-left: 5rem;
+        }
+
+        button {
+            background-color: var(--color-primary);
+            font-size: 2rem;
+            color: white;
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        a:visited,
+        a:link {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+    </style>
+</html>

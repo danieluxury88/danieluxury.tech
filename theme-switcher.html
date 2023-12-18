@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+</head>
+<body>
+    <div class="container">
+        <p>You're now viewing this example with the <span class='theme-name'>dark</span> theme!</p>
+        <button class="theme-toggle">Toggle Theme</button>
+      </div>
+</body>
+    <style>
+        :root.dark {
+            --border-btn: 1px solid rgb(220, 220, 220);
+            --color-base-bg: rgb(18, 18, 18);
+            --color-base-text: rgb(240, 240, 240);
+            --color-btn-bg: rgb(36, 36, 36);
+          }
+
+          :root.light {
+            --border-btn: 1px solid rgb(36, 36, 36);
+            --color-base-bg: rgb(240, 240, 240);
+            --color-base-text: rgb(18, 18, 18);
+            --color-btn-bg: rgb(220, 220, 220);
+          }
+
+          body,
+          .theme-toggle {
+            color: var(--color-base-text);
+          }
+
+          body {
+            background-color: var(--color-base-bg);
+            padding: 10px;
+          }
+
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          p {
+            font-size: 1.5rem;
+          }
+
+          .theme-toggle {
+            background-color: var(--color-btn-bg);
+            border: var(--border-btn);
+            font-size: 1.125rem;
+            padding: 10px 20px;
+          }
+
+          .theme-toggle:hover {
+            cursor: pointer;
+          }
+
+          .theme-toggle:focus {
+            outline: var(--border-btn);
+          }
+    </style>
+    <script>
+        function setTheme() {
+            const root = document.documentElement;
+            const newTheme = root.className === 'dark' ? 'light' : 'dark';
+            root.className = newTheme;
+
+            document.querySelector('.theme-name').textContent = newTheme;
+          }
+
+          document.querySelector('.theme-toggle').addEventListener('click', setTheme)
+    </script>
+</html>

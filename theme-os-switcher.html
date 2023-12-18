@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Os Switcher</title>
+</head>
+<body>
+    <div class="container">
+        <p>Based on your theme setting in your OS or user agent, you're now viewing this example with the <span class='theme-name'></span> theme!</p>
+      </div>
+
+      <style>
+        :root {
+            --border-btn: 1px solid rgb(36, 36, 36);
+            --color-base-bg: rgb(240, 240, 240);
+            --color-base-text: rgb(18, 18, 18);
+            --color-btn-bg: rgb(220, 220, 220);
+            --theme-name: "light";
+          }
+
+          @media (prefers-color-scheme: dark) {
+            :root {
+              --border-btn: 1px solid rgb(220, 220, 220);
+              --color-base-bg: rgb(18, 18, 18);
+              --color-base-text: rgb(240, 240, 240);
+              --color-btn-bg: rgb(36, 36, 36);
+              --theme-name: "dark";
+            }
+          }
+
+          body {
+            background-color: var(--color-base-bg);
+            color: var(--color-base-text);
+            padding: 10px;
+          }
+
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          p {
+            font-size: 1.5rem;
+          }
+
+          .theme-name::after {
+            content: var(--theme-name);
+          }
+      </style>
+</body>
+</html>
