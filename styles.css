@@ -1,3 +1,11 @@
+:root {
+    --color-primary: #142838;
+    --color-secondary: #91FFFF;
+    --color-tertiary: #4ED526;
+
+    --bg-1: #6D5D4B;
+}
+
 *,
 *::before,
 *::after {
@@ -13,8 +21,8 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
-  background-color: #eee;
-  color: #6D5D4B;
+  background-color: var(--color-primary);
+  color: #eee;
   font-weight: 300;
   line-height: 1.6; }
 
@@ -22,11 +30,15 @@ body {
     margin: 3rem;
 }
 
+.content {
+    margin: 2rem;
+}
+
 a,
 a:link,
 a:visited {
     text-decoration: none;
-    color: #6D5D4B;
+    color: var(--color-tertiary);
 }
 
 footer {
