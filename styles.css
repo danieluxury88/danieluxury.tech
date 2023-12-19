@@ -1,5 +1,8 @@
 :root {
     --color-primary: #142838;
+    --color-primary-dark: #181f27;
+    --color-primary-light: #1f2d3f;
+    --color-contrast: #F1C62B;
     --color-secondary: #91FFFF;
     --color-tertiary: #4ED526;
 
@@ -26,8 +29,30 @@ body {
   font-weight: 300;
   line-height: 1.6; }
 
+.navigation {
+  display: flex;
+  height: 3vh;
+  width: 100%;
+  background-color: var(--color-primary-light);
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.navigation li {
+  font-size: 1.4rem;
+  list-style: none;
+}
+.navigation li a{
+  color: var(--color-contrast);
+  font-weight: 500;
+
+}
+
 .container {
     margin: 3rem;
+    margin-top: .5rem;
+    margin-bottom: 15rem;
 }
 
 .content {
