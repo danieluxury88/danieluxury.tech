@@ -1,0 +1,71 @@
+:root {
+    --primary-color: #2ECC71;
+    --secondary-color: #E74C3C;
+    --text-color: #333333;
+    --font-family: 'Arial', sans-serif; /* Modern font */
+    --button-background: var(--secondary-color);
+    --button-text-color: white;
+    --input-background: #ecf0f1;
+    --input-text-color: var(--text-color);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    padding: 2rem;
+    background-color: #f7f7f7;
+}
+
+.wishlist {
+    margin-top: 2rem;
+}
+
+.wishlist ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.wishlist li {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#newItem {
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+}
+
+button {
+    padding: 1rem 2rem;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #C0392B; /* Darker shade of red */
+}
+
+.draggable {
+    transition: transform 0.2s ease;
+}
+.dragging {
+    opacity: 0.5;
+}
