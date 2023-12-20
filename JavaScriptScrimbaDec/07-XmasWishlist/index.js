@@ -9,7 +9,7 @@ function updateWishList() {
   list.innerHTML = "";
   const ul = document.createElement("ul");
 
-  wishlist.forEach((item) => {
+  wishlist.forEach((item, index) => {
     const li = document.createElement("li");
     li.textContent = item;
 
