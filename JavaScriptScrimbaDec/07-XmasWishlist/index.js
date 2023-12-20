@@ -26,33 +26,45 @@ function updateWishList() {
 }
 
 function addEventListeners(li, index) {
-    let startX;
+    li.addEventListener('dragstart', e => {
+        const startX = e.clientX;
+        const startY = e.clientY;
+        li.classList.add('dragging');
+        document.getElementById('trashCan').classList.add('show');
+        li.dataset.startX = startX;
+        li.dataset.startY = startY;
+    });
 
-    li.addEventListener('dragstart', () => li.classList.add('dragging'));
-    li.addEventListener('dragend', () => handleDragEnd(li, index));
+    li.addEventListener('dragend', e => handleDragEnd(e, index));
 
     li.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
+        const startX = e.touches[0].clientX;
+        const startY = e.touches[0].clientY;
         li.classList.add('dragging');
+        document.getElementById('trashCan').classList.add('show');
+        li.dataset.startX = startX;
+        li.dataset.startY = startY;
     });
 
-    li.addEventListener('touchmove', e => {
-        const touchX = e.touches[0].clientX;
-        li.style.transform = `translateX(${touchX - startX}px)`;
-    });
-
-    li.addEventListener('touchend', () => handleDragEnd(li, index));
+    li.addEventListener('touchend', e => handleDragEnd(e, index));
 }
 
-function handleDragEnd(li, index) {
+function handleDragEnd(e, index) {
+    const li = e.target;
     li.classList.remove('dragging');
     li.style.transform = '';
+    document.getElementById('trashCan').classList.remove('show');
 
-    if (li.getBoundingClientRect().left > 150) { // Change 150 to your threshold
+    const trashCan = document.getElementById('trashCan').getBoundingClientRect();
+    if (isOverTrashCan(trashCan, li.dataset.startX, li.dataset.startY)) {
         removeItem(index);
     }
 }
 
+function isOverTrashCan(trashCanRect, x, y) {
+    return x >= trashCanRect.left && x <= trashCanRect.right &&
+           y >= trashCanRect.top && y <= trashCanRect.bottom;
+}
 
 function addItem() {
   const newItem = document.getElementById("newItem").value.trim();

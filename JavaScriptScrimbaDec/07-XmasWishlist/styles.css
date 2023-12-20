@@ -69,3 +69,17 @@ button:hover {
 .dragging {
     opacity: 0.5;
 }
+
+#trashCan {
+    display: none; /* Hidden by default */
+    height: 20px;
+    width: 20px;
+    /* position: fixed;
+    bottom: 20px;
+    right: 20px; */
+    /* Add more styling to your trash can icon here */
+}
+
+.show {
+    display: inline-block;
+}
