@@ -16,20 +16,43 @@ function updateWishList() {
     li.setAttribute('draggable', true);
     li.classList.add('draggable');
 
-    // Add event listeners for drag events
-    li.addEventListener('dragstart', () => li.classList.add('dragging'));
-    li.addEventListener('dragend', () => {
-        li.classList.remove('dragging');
-        if (li.getBoundingClientRect().left > 15) { // Change 150 to your threshold
-            removeItem(index);
-        }
-    });
+    // Add event listeners for drag and touch events
+    addEventListeners(li, index);
 
 
     ul.appendChild(li);
   });
   list.appendChild(ul);
 }
+
+function addEventListeners(li, index) {
+    let startX;
+
+    li.addEventListener('dragstart', () => li.classList.add('dragging'));
+    li.addEventListener('dragend', () => handleDragEnd(li, index));
+
+    li.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        li.classList.add('dragging');
+    });
+
+    li.addEventListener('touchmove', e => {
+        const touchX = e.touches[0].clientX;
+        li.style.transform = `translateX(${touchX - startX}px)`;
+    });
+
+    li.addEventListener('touchend', () => handleDragEnd(li, index));
+}
+
+function handleDragEnd(li, index) {
+    li.classList.remove('dragging');
+    li.style.transform = '';
+
+    if (li.getBoundingClientRect().left > 150) { // Change 150 to your threshold
+        removeItem(index);
+    }
+}
+
 
 function addItem() {
   const newItem = document.getElementById("newItem").value.trim();
