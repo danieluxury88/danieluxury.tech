@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8-Week Calendar</title>
+<!-- HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="planning.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="calendar">
+            <div class="week days">
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+                <div class="day">Sun</div>
+            </div>
+            <!-- Repeat for 8 weeks, this is one week example -->
+            <div class="week">
+                <div class="day" data-date="2024-02-05" data-project="fulterer">
+                    <div class="day__card">Creación de página de perfil de usuario</div>
+                </div>
+                <div class="day" data-date="2024-02-06" data-project="fulterer">
+                    <div class="day__card">Creación de página de perfil de usuario</div>
+                </div>
+                <div class="day" data-date="2024-02-07" data-project="fulterer">
+                    <div class="day__card">Creación de página de perfil de usuario</div>
+                </div>
+                <div class="day" data-date="2024-02-08" data-project="fulterer">
+                    <div class="day__card">Creación de página de perfil de usuario</div>
+                </div>
+                <div class="day" data-date="2024-02-09" data-project="fulterer">
+                    <div class="day__card">Creación de página de perfil de usuario</div>
+                </div>
+                <div class="day" data-date="2024-02-10" data-project="fulterer">
+                    <div class="day__card">Creación de página de perfil de usuario</div>
+                </div>
+                <div class="day" data-date="2024-02-11" data-project="fulterer">
+                    <div class="day__card">Creación de página de perfil de usuario</div>
+                </div>
+            </div>
+            <div class="week">
+                <div class="day" data-date="2024-02-12" data-project="rapitrack">12</div>
+                <div class="day" data-date="2024-02-13" data-project="rapitrack">13</div>
+                <div class="day" data-date="2024-02-14" data-project="rapitrack">14</div>
+                <div class="day" data-date="2024-02-15" data-project="rapitrack">15</div>
+                <div class="day" data-date="2024-02-16" data-project="rapitrack">16</div>
+                <div class="day" data-date="2024-02-17" data-project="rapitrack">17</div>
+                <div class="day" data-date="2024-02-18" data-project="rapitrack">18</div>
+            </div>
+            <div class="week">
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+            </div>
+            <div class="week">
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+            </div>
+            <!-- Repeat the week div 7 more times with appropriate day numbers -->
+        </div>
+        <div class="lists">
+            <div class="tasks">
+                <h2>Tareas</h2>
+                <ul>
+                    <li>Página perfil de usuario</li>
+                    <li>Creación menú Mi Perfil/Mis Compras</li>
+                </ul>
+            </div>
+            <div class="questions">
+                <h2>Preguntas</h2>
+                <ul>
+                    <li>Buscar texto en todos los archivos</li>
+                </ul>
+            </div>
+            <div class="topics">
+                <h2>Temas</h2>
+                <ul>
+                    <li>Escuchar concursos de oratoria</li>
+                    <li>48 Leyes de Poder</li>
+                </ul>
+            </div>
+            <div class="code-sample">
+                <code>example of code</code>
+            </div>
+        </div>
+    </div>
+    <script src="planning.js"></script>
+</body>
+</html>

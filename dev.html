@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <button class="hover-button"><span class="button-text">Click Me</span></button>
+</body>
+<style>
+    .hover-button {
+        padding: 10px 50px; /* Initial padding */
+        border: 1px solid #ddd;
+        background-color: #f8f8f8;
+        cursor: pointer;
+        position: relative;
+        /*transition: background-color 0.3s ease, padding-right 0.3s ease; /* Transition for background and right padding */
+        overflow: hidden;
+    }
+
+    .hover-button .button-text {
+        /*transition: margin-right 0.3s ease;*/
+    }
+
+    .hover-button:hover {
+        background-color: #e0e0e0;
+        padding: 10px 35px !important; /* Decreased right padding to make space for the arrow */
+    }
+
+    .hover-button::after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        /*transform: translateY(-50%);*/
+        margin-left: 10px; /* Space between the text and the arrow */
+        /*transition: left 0.3s ease;*/
+    }
+
+    .hover-button:hover::after {
+        content: '→';
+        left: initial;
+        width: 10px;
+        height: 10px;
+        right: 10px; /* Adjusted to align with the new padding */
+    }
+
+    .hover-button:hover .button-text {
+        margin-right: 30px; /* Space for the arrow while hovered */
+    }
+
+
+
+</style>
+</html>

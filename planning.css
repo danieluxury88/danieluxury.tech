@@ -1,0 +1,92 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Specify in CSS */
+code { font-family: 'Fira Code', monospace; }
+
+@supports (font-variation-settings: normal) {
+  code { font-family: 'Fira Code VF', monospace; }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1px;
+    height: 100vh;
+    width: 80vw;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.week {
+    display: contents;
+}
+
+.day {
+    --project-image: none; /* Default: no background image */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+}
+
+.day::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--project-image);
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    z-index: 0;
+}
+
+.day::after {
+    content: attr(data-date);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.75rem;
+    color: #333;
+    z-index: 1;
+}
+
+.day > .content {
+    position: relative;
+    z-index: 2;
+    /* Style for your day content */
+}
+
+.days .day {
+    background: none;
+    font-weight: bold;
+    filter: none;
+}
+
+.day__card {
+    z-index: 3;
+}
+
+.fulterer-project {
+    color: #fff; /* White font color for fulterer project */
+}
+
+.rapitrack-project {
+    color: #000; /* Black font color for rapitrack project (or maintain default) */
+}
