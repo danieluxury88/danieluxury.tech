@@ -31,8 +31,23 @@ code { font-family: 'Fira Code', monospace; }
     padding: 10px;
 }
 
+@media (max-width: 1000px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .calendar {
+        width: 100vw;
+    }
+}
+
 .week {
     display: contents;
+}
+
+.week.days .day {
+    background-color: #2e2e2e;
+    color: white;
 }
 
 .day {
@@ -73,7 +88,6 @@ code { font-family: 'Fira Code', monospace; }
 .day > .content {
     position: relative;
     z-index: 2;
-    /* Style for your day content */
 }
 
 .days .day {
@@ -87,21 +101,23 @@ code { font-family: 'Fira Code', monospace; }
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Black shadow for better readability */
 }
 
-/* .day[data-project="fulterer"]::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 1;
-} */
+.past {
+    /* Combine sepia, contrast, and brightness for a more dramatic effect */
+    filter: sepia(80%) contrast(90%) brightness(90%);
+}
 
-/* .day[data-project="fulterer"] .content {
-    position: relative;
-    z-index: 2;
-} */
+.week.past > .day {
+    filter: sepia(80%) contrast(90%) brightness(90%);
+}
+
+.current {
+    border: 2px solid red; /* Sets the border color to red and makes it 2px thick */
+    box-shadow: 0 0 8px red; /* Optional: Adds a subtle glow effect to emphasize the highlight */
+}
+
+.hidden {
+    display: none;
+}
 
 .day__card {
     z-index: 3;
